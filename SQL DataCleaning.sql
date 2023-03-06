@@ -32,7 +32,7 @@ order by ParcelID
 SELECT old.ParcelID,old.PropertyAddress,new.ParcelID,new.PropertyAddress, ISNULL(old.propertyAddress,new.PropertyAddress)
 FROM PortfolioProject.dbo.NashvilleHousing old
 join PortfolioProject.dbo.NashvilleHousing new
-on a.ParcelID=b.ParcelID
+on old.ParcelID= new.ParcelID
 and old.[UniqueID ]<>new.[UniqueID ]
 where old.PropertyAddress is null
 
