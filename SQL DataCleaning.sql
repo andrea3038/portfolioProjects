@@ -29,7 +29,7 @@ order by ParcelID
 --- Self Join Table :
 
 
-SELECT a.ParcelID,a.PropertyAddress,b.ParcelID,b.PropertyAddress, ISNULL(a.propertyAddress,b.PropertyAddress)
+SELECT old.ParcelID,old.PropertyAddress,new.ParcelID,new.PropertyAddress, ISNULL(old.propertyAddress,new.PropertyAddress)
 FROM PortfolioProject.dbo.NashvilleHousing old
 join PortfolioProject.dbo.NashvilleHousing new
 on a.ParcelID=b.ParcelID
